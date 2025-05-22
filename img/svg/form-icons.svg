@@ -28,5 +28,23 @@
      <symbol id="main_arrow" viewBox="0 0 32 32">
       <path fill="#ded47b" stroke="#000" stroke-width="1.185" d="m28.084 15.75-11.713 9.968v-5.742l-.608.016c-2.634.071-4.712.433-6.414 1.147l-.334.147h-.001c-1.671.77-2.928 1.871-4.17 3.222l-.532.595-.719.82v-.97c0-3.676.778-6.593 2.255-8.736l.304-.419c2.012-2.614 5.217-4.072 9.652-4.254l.568-.023V5.78l11.713 9.969z" style="fill:var(--color1, #ded47b)"/>
     </symbol>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="logo" viewBox="0 0 182 64">
+    <!-- встав ВМІСТ З `logo.svg` СЮДИ, але БЕЗ <svg> і </svg> -->
+    <!-- Тобто тільки все, що між <svg>...</svg> -->
+
+    <!-- ВСТАВЛЕНО: -->
+    <g clip-path="url(#clip0_400_1616)">
+      ... (весь вміст) ...
+    </g>
+    <defs>
+      <clipPath id="clip0_400_1616">
+        <rect width="182" height="64" fill="white"/>
+      </clipPath>
+    </defs>
+
+  </symbol>
+</svg>
+
   </defs>
 </svg>
