@@ -14,6 +14,25 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  /* Colors */
+  --dark-brown: #02182a;
+  --white: #fff;
+  --secondary-accent-color: #fcfae9;
+  --grey: #7f7f7f;
+  --accent-color: #ded47b;
+  --cyan-Blue: #193f47;
+  --logo-Blue: #083459;
+  --dark-brown: #02182a;
+  --black: #090b15;
+--focus-color: #fffdeb;
+  /* Fonts */
+  --font-family-Poppins: 'Poppins', sans-serif;
+  --font-family-Raleway: 'Raleway', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -30,3 +49,63 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+/* #region Buttons */
+.button-order {
+  width: 190px;
+}
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--secondary-accent-color);
+  box-shadow: 1px 1px 8px 0px rgba(175, 158, 0, 0.64) inset,
+    2px 2px 8px 0px rgba(100, 94, 31, 0.9);
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.button .icon {
+  position: absolute;
+  left: 16px;
+  opacity: 0;
+  transform: translateY(100%) rotate(-90deg); /* початковий стан: знизу і обертається */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  stroke: none;
+}
+
+.button:hover .icon {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg); /* з’являється без повороту */
+}
+
+.button span {
+  transition: transform 0.3s ease;
+}
+
+.button:hover span {
+  transform: translateX(16px);
+}
+.button:active {
+  transform: scale(0.95);
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+  background-color: #fff8c4;
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+.button:active .icon {
+  transform: translateY(0) rotate(-10deg) scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+.button:active span {
+  transition: color 0.1s ease;
+}
+
+/* #endregion */

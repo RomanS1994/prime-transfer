@@ -1,0 +1,80 @@
+.about {
+  padding: 80px 0;
+}
+.container {
+}
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.card {
+  display: inline-flex;
+  width: 758px;
+  padding: 16px;
+
+  align-items: center;
+  gap: 40px;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+}
+.card:nth-child(odd) {
+  align-self: flex-start; /* Лівий край */
+}
+
+.card:nth-child(even) {
+  align-self: flex-end; /* Правий край */
+}
+.card:hover {
+  background-color: var(--secondary-accent-color);
+}
+
+.description-box {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.card-title {
+  color: var(--black);
+
+  /* Subtitle */
+  font-family: var(--font-family-Poppins);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44px; /* 157.143% */
+  letter-spacing: 0.28px;
+}
+.section-line {
+  background: var(--Prime-Transfer-accent-color, #ded47b);
+  width: 368px;
+  height: 1px;
+}
+.card-description-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.description-item {
+}
+.description-text {
+  color: var(--black);
+
+  /* body-text */
+  font-family: var(--font-family-Raleway);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.8px; /* 155% */
+}
+.card-button {
+  width: 138px;
+  transition: transform 0.3s ease;
+}
+.card-button:hover {
+  transform: scale(1.1);
+}
+.description-img {
+  border-radius: 30px;
+}

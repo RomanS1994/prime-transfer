@@ -1,0 +1,96 @@
+<section class="contacts" id="contacts">
+  <div class="container">
+    <h2 class="contacts-title">Замовити трансфер</h2>
+    <p class="contacts-text">
+      Заповніть форму, і ми зв'яжемося з вами протягом 10 хвилин.
+    </p>
+    <div class="form-map-wrapper">
+      <form class="form" id="my-form">
+        <div class="form-wrapper">
+          <label class="form-label" for="user-name">Ваше ім'я:</label>
+          <div class="form-label-wrapper">
+            <input
+              class="form-input"
+              type="text"
+              id="user-name"
+              name="user-name"
+            />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#person"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="user-email">Email</label>
+          <div class="form-label-wrapper">
+            <input
+              class="form-input"
+              type="email"
+              id="user-email"
+              name="user-email"
+            />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#email"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="user-phone">Номер телефону: </label>
+          <div class="form-label-wrapper">
+            <input
+              class="form-input"
+              type="phone"
+              id="user-phone"
+              name="user-phone"
+              placeholder="+380-67-86-17-843"
+            />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#phone"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="time">Час</label>
+          <div class="form-label-wrapper">
+            <input class="form-input" type="date" id="time" name="time" />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#time"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="get-in">Місце посадки</label>
+          <div class="form-label-wrapper">
+            <input class="form-input" type="text" id="get-in" name="get-in" />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#way"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="get-out">Місце висадки</label>
+          <div class="form-label-wrapper">
+            <input class="form-input" type="text" id="get-out" name="get-out" />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#way"></use>
+            </svg>
+          </div>
+        </div>
+      </form>
+      <div class="map-box">
+        <div class="map"></div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="button card-button submit-button"
+      form="my-form"
+      type="submit"
+    >
+      Замовити трансфер
+    </button>
+  </div>
+</section>

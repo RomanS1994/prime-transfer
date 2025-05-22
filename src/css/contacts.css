@@ -1,0 +1,134 @@
+.submit-button {
+  width: fit-content;
+}
+.contacts {
+}
+.container {
+  text-align: center;
+}
+.contacts-title {
+  margin-bottom: 40px;
+
+  color: var(--black);
+
+  /* h2 */
+  font-family: var(--font-family-Poppins);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 44px; /* 122.222% */
+  letter-spacing: 0.36px;
+}
+.contacts-text {
+  margin-bottom: 40px;
+
+  color: var(--black);
+
+  /* button-text */
+  font-family: var(--font-family-Poppins);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.form-map-wrapper {
+  margin-bottom: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 412px;
+  padding: 20px 40px;
+  gap: 20px;
+
+  border: 1px solid var(--black);
+  background: var(--white);
+  box-shadow: 4px 5px 16px 0px rgba(0, 0, 0, 0.8);
+}
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  width: 100%;
+}
+.form-label {
+  color: var(--black);
+
+  /* body-text */
+  font-family: var(--font-family-Raleway);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.8px; /* 155% */
+}
+.form-label-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 48px;
+}
+
+.form-input {
+  /* body-text */
+  font-family: var(--font-family-Poppins);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.8px; /* 155% */
+
+  padding-left: 40px;
+  padding-right: 16px;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 1px solid var(--accent-color);
+  background-color: var(--white);
+  color: var(--black);
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  background-color: (var(--focus-color));
+}
+
+.form-input:focus + .svg,
+.form-input:hover + .svg {
+  transform: scale(1.6);
+  transition: transform 0.3s ease;
+  fill: var(--accent-color);
+}
+
+.form-input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px var(--focus-color) inset !important;
+  -webkit-text-fill-color: var(--black) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.svg {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.svg-arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.map-box {
+}
+.map {
+}
+.button {
+}
+.card-button {
+}
+.submit-button {
+}

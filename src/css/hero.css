@@ -1,0 +1,31 @@
+.hero {
+  background-image: url('../img/hero-photo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  height: 854px;
+}
+.hero-container {
+  height: 854px;
+  padding: 80px 16px;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+h1 {
+  width: 662px;
+
+  color: var(--white);
+
+  /* h1 */
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.48px;
+}
