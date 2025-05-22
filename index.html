@@ -2,20 +2,353 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/public/white-logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/prime-transfer/assets/white-logo-UFVKzcvF.svg" />
+    <!-- <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" /> -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prime-Transfer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" crossorigin src="/prime-transfer/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/prime-transfer/assets/index-CZ8waI_Z.css">
+    <link rel="stylesheet" crossorigin href="/prime-transfer/assets/index-BXHHE88n.css">
   </head>
   <body>
-    <header class="header">
-  <h1>I am header</h1>
+    <header class="header" id="header">
+  <section class="container heder-section">
+    <nav class="header-nav">
+      <a class="logo-wrapper" href="#hero">
+        <svg class="logo-svg">
+          <use href="../img/logo.svg#logo"></use>
+        </svg>
+      </a>
+      <ul class="header-nav-item">
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="#about">Про нас</a>
+        </li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="">Ціни </a>
+        </li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="#contacts">Резервувати</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="len-link-wrapper">
+      <select class="len-variants link-enter" id="langSelect">
+        <option class="len-otion" value="ua">UA 🇺🇦</option>
+        <option class="len-otion" value="en">EN 🇬🇧</option>
+        <option class="len-otion" value="cz">CZ 🇨🇿</option>
+      </select>
+      <a class="link-enter" href="">Увійти</a>
+    </div>
+  </section>
 </header>
 
-    <main></main>
-    <footer class="footer">
-  <h1>I am footer</h1>
+    <main>
+      <section class="hero" id="hero">
+  <div class="container hero-container">
+    <h1>Вишукані та надійні авто для вашого комфорту!</h1>
+
+    <button class="button button-order" type="button">
+      <span>Резервувати</span>
+      <svg class="icon" width="26" height="26">
+        <use href="/prime-transfer/assets/sprite-Hnh5aSoo.svg#arrow-button"></use>
+      </svg>
+    </button>
+  </div>
+</section>
+
+      <section class="about" id="about">
+  <div class="container">
+    <ul class="cards-list">
+      <li class="card">
+        <div class="description-box">
+          <h2 class="card-title">Аеропортний трансфер</h2>
+          <div class="section-line"></div>
+          <ul class="card-description-list">
+            <li class="description-item">
+              <p class="description-text">
+                ✈️ Преміальний сервіс для комфортної подорожі.
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Забудьте про стрес і поспіх – наші водії зустрінуть вас в
+                аеропорту з іменною табличкою, допоможуть з багажем і подбають
+                про безпечну та комфортну поїздку до місця призначення.
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Наші автомобілі завжди чисті, обладнані Wi-Fi та напоями, а
+                професійний підхід до обслуговування гарантує приємний досвід.
+              </p>
+            </li>
+          </ul>
+          <button class="button card-button" type="button">Більше</button>
+        </div>
+        <img
+          class="description-img"
+          src="../img/about-img/airport.jpg"
+          srcset="../img/about-img/airport.jpg, ../img/about-img/airport@2x.jpg"
+          alt="Аеропортний трансфер"
+          width="244px"
+          height="344px"
+        />
+      </li>
+      <li class="card">
+        <div class="description-box">
+          <h2 class="card-title">Корпоративний трансфер</h2>
+          <div class="section-line"></div>
+
+          <ul class="card-description-list">
+            <li class="description-item">
+              <p class="description-text">
+                🏢 Розкіш та надійність для ділових поїздок
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Ми знаємо, наскільки важливий комфорт і пунктуальність у
+                бізнесі. Наші корпоративні трансфери забезпечують бездоганне
+                пересування між зустрічами, конференціями та аеропортами.
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Професійні водії, сучасні автомобілі та гнучкі умови співпраці
+                дозволять вам сфокусуватися на важливих справах, не турбуючись
+                про логістику.
+              </p>
+            </li>
+          </ul>
+          <button class="button card-button" type="button">Більше</button>
+        </div>
+        <img
+          class="description-img"
+          src="../img/about-img/airport.jpg"
+          srcset="../img/about-img/airport.jpg, ../img/about-img/airport@2x.jpg"
+          alt="Аеропортний трансфер"
+          width="244px"
+          height="344px"
+        />
+      </li>
+      <li class="card">
+        <div class="description-box">
+          <h2 class="card-title">Персональний водій</h2>
+          <div class="section-line"></div>
+
+          <ul class="card-description-list">
+            <li class="description-item">
+              <p class="description-text">
+                🚘 Ваш комфортний супутник у будь-якій подорожі
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Оренда авто з персональним водієм – це свобода пересування та
+                абсолютний комфорт. Ми підлаштуємося під ваш графік, допоможемо
+                з вибором оптимального маршруту та гарантуємо першокласний
+                сервіс.
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Чи то шопінг-тур, зустріч із друзями або цілий день справ – ми
+                подбаємо про вашу зручність і безпеку.
+              </p>
+            </li>
+          </ul>
+          <button class="button card-button" type="button">Більше</button>
+        </div>
+        <img
+          class="description-img"
+          src="../img/about-img/airport.jpg"
+          srcset="../img/about-img/airport.jpg, ../img/about-img/airport@2x.jpg"
+          alt="Аеропортний трансфер"
+          width="244px"
+          height="344px"
+        />
+      </li>
+      <li class="card">
+        <div class="description-box">
+          <h2 class="card-title">VIP та люкс-послуги</h2>
+          <div class="section-line"></div>
+
+          <ul class="card-description-list">
+            <li class="description-item">
+              <p class="description-text">
+                ✨ Рівень обслуговування, якого ви заслуговуєте
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Для найвибагливіших клієнтів ми пропонуємо найкращі автомобілі
+                бізнес- і преміум-класу, та повну конфіденційність.
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Ексклюзивний транспорт, професійні водії та індивідуальний
+                підхід – усе це зробить вашу подорож розкішною та бездоганною.
+              </p>
+            </li>
+          </ul>
+          <button class="button card-button" type="button">Більше</button>
+        </div>
+        <img
+          class="description-img"
+          src="../img/about-img/airport.jpg"
+          srcset="../img/about-img/airport.jpg, ../img/about-img/airport@2x.jpg"
+          alt="Аеропортний трансфер"
+          width="244px"
+          height="344px"
+        />
+      </li>
+      <li class="card">
+        <div class="description-box">
+          <h2 class="card-title">Тури та екскурсії</h2>
+          <div class="section-line"></div>
+
+          <ul class="card-description-list">
+            <li class="description-item">
+              <p class="description-text">
+                🌍 Відкривайте нові місця з комфортом
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Насолоджуйтеся подорожами без зайвих турбот. Ми підберемо для
+                вас ідеальний маршрут, врахуємо всі побажання та зробимо вашу
+                подорож незабутньою.
+              </p>
+            </li>
+            <li class="description-item">
+              <p class="description-text">
+                Досвідчені водії, комфортні автомобілі та максимальна гнучкість
+                – усе для вашої зручності та насолоди від поїздки.
+              </p>
+            </li>
+          </ul>
+          <button class="button card-button" type="button">Більше</button>
+        </div>
+        <img
+          class="description-img"
+          src="../img/about-img/airport.jpg"
+          srcset="../img/about-img/airport.jpg, ../img/about-img/airport@2x.jpg"
+          alt="Аеропортний трансфер"
+          width="244px"
+          height="344px"
+        />
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <section class="contacts" id="contacts">
+  <div class="container">
+    <h2 class="contacts-title">Замовити трансфер</h2>
+    <p class="contacts-text">
+      Заповніть форму, і ми зв'яжемося з вами протягом 10 хвилин.
+    </p>
+    <div class="form-map-wrapper">
+      <form class="form" id="my-form">
+        <div class="form-wrapper">
+          <label class="form-label" for="user-name">Ваше ім'я:</label>
+          <div class="form-label-wrapper">
+            <input
+              class="form-input"
+              type="text"
+              id="user-name"
+              name="user-name"
+            />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#person"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="user-email">Email</label>
+          <div class="form-label-wrapper">
+            <input
+              class="form-input"
+              type="email"
+              id="user-email"
+              name="user-email"
+            />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#email"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="user-phone">Номер телефону: </label>
+          <div class="form-label-wrapper">
+            <input
+              class="form-input"
+              type="phone"
+              id="user-phone"
+              name="user-phone"
+              placeholder="+380-67-86-17-843"
+            />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#phone"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="time">Час</label>
+          <div class="form-label-wrapper">
+            <input class="form-input" type="date" id="time" name="time" />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#time"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="get-in">Місце посадки</label>
+          <div class="form-label-wrapper">
+            <input class="form-input" type="text" id="get-in" name="get-in" />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#way"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label class="form-label" for="get-out">Місце висадки</label>
+          <div class="form-label-wrapper">
+            <input class="form-input" type="text" id="get-out" name="get-out" />
+            <svg class="svg" width="16" height="16">
+              <use href="../img/form-icons.svg#way"></use>
+            </svg>
+          </div>
+        </div>
+      </form>
+      <div class="map-box">
+        <div class="map"></div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="button card-button submit-button"
+      form="my-form"
+      type="submit"
+    >
+      Замовити трансфер
+    </button>
+  </div>
+</section>
+
+    </main>
+    <footer class="footer container">
+  <h2>I am footer</h2>
 </footer>
 
   </body>
