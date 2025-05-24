@@ -18,7 +18,26 @@
   flex-shrink: 0;
   transition: background-color 0.3s ease;
   border-radius: 20px;
+
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 0.8s ease-out;
 }
+
+/* Початкові позиції */
+.card[data-direction='left'] {
+  transform: translateX(-100px);
+}
+.card[data-direction='right'] {
+  transform: translateX(100px);
+}
+
+/* Коли з’являються */
+.card.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .card:nth-child(odd) {
   align-self: flex-start; /* Лівий край */
 }
