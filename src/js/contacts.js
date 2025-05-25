@@ -1,27 +1,30 @@
 const refs = {
   form: document.querySelector('form'),
-  button: document.querySelector('.submit-button'),
 };
 
-const { form, button } = refs;
+const { form } = refs;
 
-const colorBackground = '#FFFDEB';
+const colorBackground = '#fcfaf2';
 const colorBorder = '2px solid #ff9662';
-const data = {};
+let data = {};
 const keyLS = 'form-data';
 
+// Зміна кольору
 function changeBgColor(el, currentColor = colorBackground) {
   el.style.background = currentColor;
 }
 
+// Зміна бордеру
 function changeBorderColor(el, currentColor = colorBorder) {
   el.style.border = currentColor;
 }
 
+// збереження LS
 function saveLs(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
+// Отримання даних LS
 function loadLs(key) {
   return JSON.parse(localStorage.getItem(key));
 }
@@ -34,12 +37,12 @@ if (lsData) {
     if (input) {
       input.value = value;
       changeBgColor(input);
-      changeBorderColor(input, '1px solid #ded47b');
       data[name] = value;
     }
   });
 }
 
+// Слухаємо зміни значення інпутів
 form.addEventListener('input', event => {
   const input = event.target;
 
@@ -62,6 +65,7 @@ form.addEventListener('input', event => {
   console.log(data);
 });
 
+// Сабмітимо форму
 form.addEventListener('submit', handlerSubmit);
 
 function handlerSubmit(e) {
@@ -74,6 +78,14 @@ function handlerSubmit(e) {
     localStorage.removeItem(keyLS);
     console.log(`Дані відправлені - ${data}`);
     console.log(data);
+
+    Array.from(form.elements).forEach(el => {
+      if (el.classList.contains('form-input')) {
+        changeBgColor(el, 'var(--white)');
+      }
+    });
+
     alert('Форма успішно відправлена ✅');
   }
+  form.reset();
 }

@@ -39,10 +39,12 @@
           <div class="form-label-wrapper">
             <input
               class="form-input"
-              type="phone"
+              type="tel"
               id="user-phone"
               name="user-phone"
               placeholder="+380-67-86-17-843"
+              pattern="^\+380\d{9}$"
+              required
             />
             <svg class="svg" width="16" height="16">
               <use href="/img/svg/form-icons.svg#phone"></use>
@@ -50,9 +52,15 @@
           </div>
         </div>
         <div class="form-wrapper">
-          <label class="form-label" for="time">Час</label>
+          <label class="form-label" for="time">Дата; час;</label>
           <div class="form-label-wrapper">
-            <input class="form-input" type="date" id="time" name="time" />
+            <input
+              class="form-input input-date-time"
+              type="text"
+              id="time"
+              name="time"
+              placeholder="Виберіть дату і час!"
+            />
             <svg class="svg" width="16" height="16">
               <use href="/img/svg/form-icons.svg#time"></use>
             </svg>
