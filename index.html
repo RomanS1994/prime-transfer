@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
   <head>
     <meta charset="UTF-8" />
     <link
@@ -24,8 +24,9 @@
     />
 
     <script type="module" crossorigin src="/prime-transfer/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/prime-transfer/assets/vendor-D7did3n7.js">
-    <link rel="stylesheet" crossorigin href="/prime-transfer/assets/index-jWjaQGGv.css">
+    <link rel="modulepreload" crossorigin href="/prime-transfer/assets/vendor-5TwkcLzw.js">
+    <link rel="stylesheet" crossorigin href="/prime-transfer/assets/vendor-C3QZVnZz.css">
+    <link rel="stylesheet" crossorigin href="/prime-transfer/assets/index-CFCclRXa.css">
   </head>
   <body>
     <header class="header" id="header">
@@ -64,12 +65,14 @@
   <div class="container hero-container">
     <h1>Вишукані та надійні авто для вашого комфорту!</h1>
 
-    <button class="button button-order" type="button">
-      <span>Резервувати</span>
-      <svg class="icon" width="26" height="26">
-        <use href="/prime-transfer/img/svg/form-icons.svg#main_arrow"></use>
-      </svg>
-    </button>
+    <a href="#contacts">
+      <button class="button button-order" type="button">
+        <span>Резервувати</span>
+        <svg class="icon" width="26" height="26">
+          <use href="/prime-transfer/img/svg/form-icons.svg#main_arrow"></use>
+        </svg>
+      </button>
+    </a>
   </div>
 </section>
 
@@ -100,7 +103,13 @@
               </p>
             </li>
           </ul>
-          <button class="button card-button" type="button">Більше</button>
+          <button
+            class="button card-button btn-more"
+            type="button"
+            data-service="airport"
+          >
+            Більше
+          </button>
         </div>
         <img
           class="description-img"
@@ -137,7 +146,13 @@
               </p>
             </li>
           </ul>
-          <button class="button card-button" type="button">Більше</button>
+          <button
+            class="button card-button btn-more"
+            type="button"
+            data-service="corporate"
+          >
+            Більше
+          </button>
         </div>
         <img
           class="description-img"
@@ -174,7 +189,13 @@
               </p>
             </li>
           </ul>
-          <button class="button card-button" type="button">Більше</button>
+          <button
+            class="button card-button btn-more"
+            type="button"
+            data-service="personal"
+          >
+            Більше
+          </button>
         </div>
         <img
           class="description-img"
@@ -209,7 +230,13 @@
               </p>
             </li>
           </ul>
-          <button class="button card-button" type="button">Більше</button>
+          <button
+            class="button card-button btn-more"
+            type="button"
+            data-service="vip"
+          >
+            Більше
+          </button>
         </div>
         <img
           class="description-img"
@@ -245,7 +272,13 @@
               </p>
             </li>
           </ul>
-          <button class="button card-button" type="button">Більше</button>
+          <button
+            class="button card-button btn-more"
+            type="button"
+            data-service="tours"
+          >
+            Більше
+          </button>
         </div>
         <img
           class="description-img"
@@ -348,10 +381,26 @@
         </div>
       </form>
       <div class="map-box">
-        <div class="map"></div>
-        <div>
-          <div></div>
-          <div></div>
+        <div class="map" id="map"></div>
+        <div class="map-info-wrapper">
+          <div class="way-details">
+            <svg class="way-svg" width="24" height="24">
+              <use href="../public/img/svg/sprite.svg#way"></use>
+            </svg>
+            <div class="way-details-wrapper">
+              <p class="map-info-text">Кількість кілометрів</p>
+              <span class="map-info-text">0. км</span>
+            </div>
+          </div>
+          <div class="way-details">
+            <svg class="map-time-svg" width="24" height="24">
+              <use href="../public/img/svg/sprite.svg#map-time"></use>
+            </svg>
+            <div class="way-details-wrapper">
+              <p class="map-info-text">Тривалість поїздки</p>
+              <span class="map-info-text">0. км</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -366,9 +415,6 @@
 </section>
 
     </main>
-    <footer class="footer container">
-  <h2>I am footer</h2>
-</footer>
-
+    
   </body>
 </html>
