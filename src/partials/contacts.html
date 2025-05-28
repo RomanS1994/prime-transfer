@@ -86,10 +86,26 @@
         </div>
       </form>
       <div class="map-box">
-        <div class="map"></div>
-        <div>
-          <div></div>
-          <div></div>
+        <div class="map" id="map"></div>
+        <div class="map-info-wrapper">
+          <div class="way-details">
+            <svg class="way-svg" width="24" height="24">
+              <use href="../public/img/svg/sprite.svg#way"></use>
+            </svg>
+            <div class="way-details-wrapper">
+              <p class="map-info-text">Кількість кілометрів</p>
+              <span class="map-info-text">0. км</span>
+            </div>
+          </div>
+          <div class="way-details">
+            <svg class="map-time-svg" width="24" height="24">
+              <use href="../public/img/svg/sprite.svg#map-time"></use>
+            </svg>
+            <div class="way-details-wrapper">
+              <p class="map-info-text">Тривалість поїздки</p>
+              <span class="map-info-text">0. км</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

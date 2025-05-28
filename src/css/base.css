@@ -69,6 +69,12 @@ main:has(.back-link) {
   font-size: 20px;
   font-weight: 500;
   overflow: hidden;
+
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
 }
 
 .button .icon {

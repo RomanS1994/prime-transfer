@@ -1,5 +1,6 @@
-.submit-button {
-  width: fit-content;
+.contacts {
+  padding-top: 120px;
+  padding-bottom: 80px;
 }
 
 .contacts-title {
@@ -29,10 +30,12 @@
   font-weight: 500;
   line-height: normal;
 }
-
 .form-map-wrapper {
+  display: flex;
+  gap: 40px;
   margin-bottom: 40px;
 }
+/* #region Form */
 
 .form {
   display: flex;
@@ -118,14 +121,53 @@
   top: 16px;
   right: 16px;
 }
+/* #endregion */
 
 .map-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .map {
+  width: 732px;
+  height: 530px;
+
+  border-radius: 40px;
 }
-.button {
+.map-info-wrapper {
+  position: relative;
+  display: flex;
+  gap: 180px;
+
+  border: 1px solid var(--Prime-Transfer-accent-color, #ded47b);
 }
-.card-button {
+
+.map-info-wrapper::before {
+  content: '';
+  width: 1px;
+  height: 60%; /* або 100% */
+  background-color: var(--accent-color, #0057b8);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.way-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 8px;
+}
+.way-svg {
+}
+.way-details-wrapper {
+}
+.map-info-text {
+}
+.map-time-svg {
+}
+
 .submit-button {
+  width: fit-content;
 }
