@@ -26,7 +26,7 @@
     <script type="module" crossorigin src="/prime-transfer/index.js"></script>
     <link rel="modulepreload" crossorigin href="/prime-transfer/assets/vendor-5TwkcLzw.js">
     <link rel="stylesheet" crossorigin href="/prime-transfer/assets/vendor-C3QZVnZz.css">
-    <link rel="stylesheet" crossorigin href="/prime-transfer/assets/index-CFCclRXa.css">
+    <link rel="stylesheet" crossorigin href="/prime-transfer/assets/index-B1MxVBOi.css">
   </head>
   <body>
     <header class="header" id="header">
@@ -362,18 +362,24 @@
           </div>
         </div>
         <div class="form-wrapper">
-          <label class="form-label" for="get-in">Місце посадки</label>
+          <div class="label-marker-wrapper">
+            <label class="form-label" for="get-in">Місце посадки</label>
+            <button type="button" class="map-btn" id="set-from-btn">📍</button>
+          </div>
           <div class="form-label-wrapper">
-            <input class="form-input" type="text" id="get-in" name="get-in" />
+            <input class="form-input" type="text" id="get-in" name="from" />
             <svg class="svg" width="16" height="16">
               <use href="/prime-transfer/img/svg/form-icons.svg#way"></use>
             </svg>
           </div>
         </div>
         <div class="form-wrapper">
-          <label class="form-label" for="get-out">Місце висадки</label>
+          <div class="label-marker-wrapper">
+            <label class="form-label" for="get-out">Місце висадки</label>
+            <button type="button" class="map-btn" id="set-to-btn">📍</button>
+          </div>
           <div class="form-label-wrapper">
-            <input class="form-input" type="text" id="get-out" name="get-out" />
+            <input class="form-input" type="text" id="get-out" name="to" />
             <svg class="svg" width="16" height="16">
               <use href="/prime-transfer/img/svg/form-icons.svg#way"></use>
             </svg>
@@ -389,7 +395,7 @@
             </svg>
             <div class="way-details-wrapper">
               <p class="map-info-text">Кількість кілометрів</p>
-              <span class="map-info-text">0. км</span>
+              <strong class="map-info-text map-km">0. км</strong>
             </div>
           </div>
           <div class="way-details">
@@ -398,7 +404,7 @@
             </svg>
             <div class="way-details-wrapper">
               <p class="map-info-text">Тривалість поїздки</p>
-              <span class="map-info-text">0. км</span>
+              <strong class="map-info-text map-time">0. год</strong>
             </div>
           </div>
         </div>
@@ -407,7 +413,7 @@
     <button
       class="button card-button submit-button"
       form="my-form"
-      type="submit"
+      type="button"
     >
       Замовити трансфер
     </button>
