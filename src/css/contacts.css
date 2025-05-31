@@ -55,7 +55,14 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  width: 100%;
+}
 
+.label-marker-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 .form-label {
@@ -170,4 +177,22 @@
 
 .submit-button {
   width: fit-content;
+}
+
+.map-btn {
+  margin-top: 6px;
+  background-color: #f4f4f4;
+  border: 1px solid var(--accent-color);
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.map-btn:hover,
+.map-btn:focus {
+  background-color: var(--accent-color);
+}
+.map-pick-mode * {
+  cursor: crosshair !important;
 }
