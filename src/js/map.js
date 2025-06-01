@@ -140,26 +140,48 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
 
         suppressAutocomplete = true;
 
+        // Знімаємо фокус з активного поля перед оновленням значення
+        document.activeElement.blur();
+
+        const place = {
+          geometry: { location: clickedLocation },
+          formatted_address: address,
+        };
+
         if (isSettingFrom) {
           if (manualFromMarker) manualFromMarker.setMap(null);
           manualFromMarker = new Marker({
             position: clickedLocation,
-            map: map,
+            map,
             label: 'A',
           });
-          fromPlace = { geometry: { location: clickedLocation } };
+          fromPlace = place;
           fromInput.value = address;
-          fromInput.dispatchEvent(new InputEvent('input', { bubbles: true }));
+          // fromInput.dispatchEvent(new InputEvent('input', { bubbles: true }));
+
+          fromInput.blur(); // ⚠️ Забирає фокус
+
+          fromInput.setAttribute('autocomplete', 'off'); // 🔧 вимикаємо автокомпліт
+          fromInput.blur(); // забираємо фокус
+          fromInput.value = address;
+          setTimeout(() => fromInput.setAttribute('autocomplete', 'on'), 300); // 🔄 повертаємо
         } else {
           if (manualToMarker) manualToMarker.setMap(null);
           manualToMarker = new Marker({
             position: clickedLocation,
-            map: map,
+            map,
             label: 'B',
           });
-          toPlace = { geometry: { location: clickedLocation } };
+          toPlace = place;
           toInput.value = address;
-          toInput.dispatchEvent(new InputEvent('input', { bubbles: true }));
+          // toInput.dispatchEvent(new InputEvent('input', { bubbles: true }));
+
+          toInput.blur(); // ⚠️ Забирає фокус
+
+          toInput.setAttribute('autocomplete', 'off');
+          toInput.blur();
+          toInput.value = address;
+          setTimeout(() => toInput.setAttribute('autocomplete', 'on'), 300);
         }
 
         suppressAutocomplete = false;
