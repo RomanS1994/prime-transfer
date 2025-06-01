@@ -52,7 +52,7 @@ form.addEventListener('input', event => {
 
   if (value.trim()) {
     data[name] = value;
-    changeBgColor(input, '#fcfaf2'); // Або var(--secondary-accent-color) з CSS
+    changeBgColor(input);
     changeBorderColor(input, '1px solid #ded47b');
   } else {
     delete data[name];
@@ -60,7 +60,7 @@ form.addEventListener('input', event => {
     changeBgColor(input, '#FFF');
   }
 
-  // Обʼєднуємо нові дані з попередніми з LS
+  // зберігаємо обʼєднані дані (форма + координати маршруту, якщо вже є)
   const prev = loadLs(keyLS) || {};
   const merged = { ...prev, ...data };
   saveLs(keyLS, merged);
@@ -78,17 +78,7 @@ function handlerSubmit(e) {
     return;
   }
 
-  const saved = loadLs(keyLS) || {};
-
-  // 🛑 Перевіряємо, чи є координати маршруту
-  if (!saved['get-in-coords'] || !saved['get-out-coords']) {
-    alert(
-      'Будь ласка, оберіть коректні адреси для маршруту на мапі або через підказки.'
-    );
-    return;
-  }
-
-  // ✅ Якщо все гаразд — очищаємо LS
+  // 💥 Очищаємо все
   localStorage.removeItem(keyLS);
 
   console.log('Дані відправлені:', data);
@@ -101,7 +91,9 @@ function handlerSubmit(e) {
     }
   });
 
-  data = {}; // Очищуємо обʼєкт форми
+  data = {}; // Очищуємо обʼєкт
 
   alert('Форма успішно відправлена ✅');
 }
+console.log(data);
+console.log(localStorage.getItem(keyLS));

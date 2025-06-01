@@ -1,15 +1,14 @@
 const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
 
 (g => {
-  var h,
-    a,
-    k,
+  var h, a, k,
     p = 'The Google Maps JavaScript API',
     c = 'google',
     l = 'importLibrary',
     q = '__ib__',
     m = document,
     b = window;
+
   b = b[c] || (b[c] = {});
   var d = b.maps || (b.maps = {}),
     r = new Set(),
@@ -20,10 +19,7 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
         await (a = m.createElement('script'));
         e.set('libraries', [...r] + '');
         for (k in g)
-          e.set(
-            k.replace(/[A-Z]/g, t => '_' + t[0].toLowerCase()),
-            g[k]
-          );
+          e.set(k.replace(/[A-Z]/g, t => '_' + t[0].toLowerCase()), g[k]);
         e.set('callback', c + '.maps.' + q);
         a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
         d[q] = f;
@@ -31,6 +27,7 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
         a.nonce = m.querySelector('script[nonce]')?.nonce || '';
         m.head.append(a);
       }));
+
   d[l]
     ? console.warn(p + ' only loads once. Ignoring:', g)
     : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
@@ -55,7 +52,7 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
   const defaultLocation = { lat: 50.0755, lng: 14.4378 };
   const map = new Map(document.getElementById('map'), {
     center: defaultLocation,
-    zoom: 13,
+    zoom: 12,
   });
 
   const directionsService = new DirectionsService();
@@ -81,6 +78,22 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
   let manualFromMarker = null;
   let manualToMarker = null;
   let isSettingFrom = true;
+
+  const updateLSField = (name, value) => {
+    const prev = JSON.parse(localStorage.getItem('form-data')) || {};
+    const updated = { ...prev, [name]: value };
+    localStorage.setItem('form-data', JSON.stringify(updated));
+  };
+
+  const saveCoordsToLS = () => {
+    const data = {
+      'get-in': fromInput.value,
+      'get-out': toInput.value,
+      'get-in-coords': fromPlace?.geometry.location.toJSON(),
+      'get-out-coords': toPlace?.geometry.location.toJSON(),
+    };
+    localStorage.setItem('form-data', JSON.stringify(data));
+  };
 
   const calculateAndDisplayRoute = () => {
     if (!fromPlace || !toPlace) return;
@@ -119,26 +132,14 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
     );
   };
 
-  const saveCoordsToLS = () => {
-    const data = {
-      'get-in': fromInput.value,
-      'get-out': toInput.value,
-      'get-in-coords': fromPlace?.geometry.location.toJSON(),
-      'get-out-coords': toPlace?.geometry.location.toJSON(),
-    };
-    localStorage.setItem('form-data', JSON.stringify(data));
-  };
-
   map.addListener('click', e => {
     disableCursorPickMode();
     const clickedLocation = e.latLng;
-
     const geocoder = new google.maps.Geocoder();
+
     geocoder.geocode({ location: clickedLocation }, (results, status) => {
       if (status === 'OK' && results[0]) {
         const address = results[0].formatted_address;
-
-        suppressAutocomplete = true;
 
         if (isSettingFrom) {
           if (manualFromMarker) manualFromMarker.setMap(null);
@@ -147,9 +148,9 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
             map: map,
             label: 'A',
           });
-          fromPlace = { geometry: { location: clickedLocation } };
           fromInput.value = address;
-          fromInput.dispatchEvent(new InputEvent('input', { bubbles: true }));
+          fromPlace = { geometry: { location: clickedLocation } };
+          updateLSField('get-in', address);
         } else {
           if (manualToMarker) manualToMarker.setMap(null);
           manualToMarker = new Marker({
@@ -157,80 +158,61 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
             map: map,
             label: 'B',
           });
-          toPlace = { geometry: { location: clickedLocation } };
           toInput.value = address;
-          toInput.dispatchEvent(new InputEvent('input', { bubbles: true }));
+          toPlace = { geometry: { location: clickedLocation } };
+          updateLSField('get-out', address);
         }
 
-        suppressAutocomplete = false;
-
-        saveCoordsToLS();
-        calculateAndDisplayRoute();
-      }
-    });
-  });
-
-  let suppressAutocomplete = false;
-
-  fromInput.addEventListener('blur', () => {
-    const address = fromInput.value.trim();
-    if (!address) return;
-
-    const geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ address }, (results, status) => {
-      if (status === 'OK' && results[0]) {
-        const location = results[0].geometry.location;
-
-        fromPlace = { geometry: { location } };
-        if (manualFromMarker) manualFromMarker.setMap(null);
-        manualFromMarker = new Marker({ position: location, map, label: 'A' });
-
-        fromInput.value = results[0].formatted_address;
-
         saveCoordsToLS();
         calculateAndDisplayRoute();
       } else {
-        alert(
-          '❌ Адреса введена неправильно. Виберіть її з підказок або з карти.'
-        );
-        fromInput.value = '';
-        if (manualFromMarker) manualFromMarker.setMap(null);
-        fromPlace = null;
-        saveCoordsToLS();
+        alert('Не вдалося отримати адресу з координат.');
       }
     });
   });
 
-  toInput.addEventListener('blur', () => {
-    const address = toInput.value.trim();
-    if (!address) return;
+  fromAutocomplete.addListener('place_changed', () => {
+    const place = fromAutocomplete.getPlace();
+    if (!place || !place.geometry || !place.geometry.location) {
+      alert('❌ Ви не вибрали адресу зі списку (пункт A)');
+      fromInput.value = '';
+      fromPlace = null;
+      return;
+    }
 
-    const geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ address }, (results, status) => {
-      if (status === 'OK' && results[0]) {
-        const location = results[0].geometry.location;
-
-        toPlace = { geometry: { location } };
-        if (manualToMarker) manualToMarker.setMap(null);
-        manualToMarker = new Marker({ position: location, map, label: 'B' });
-
-        toInput.value = results[0].formatted_address;
-
-        saveCoordsToLS();
-        calculateAndDisplayRoute();
-      } else {
-        alert(
-          '❌ Адреса введена неправильно. Виберіть її з підказок або з карти.'
-        );
-        toInput.value = '';
-        if (manualToMarker) manualToMarker.setMap(null);
-        toPlace = null;
-        saveCoordsToLS();
-      }
+    fromPlace = place;
+    if (manualFromMarker) manualFromMarker.setMap(null);
+    manualFromMarker = new Marker({
+      position: place.geometry.location,
+      map: map,
+      label: 'A',
     });
+
+    saveCoordsToLS();
+    calculateAndDisplayRoute();
   });
 
-  // Відновлення з LS
+  toAutocomplete.addListener('place_changed', () => {
+    const place = toAutocomplete.getPlace();
+    if (!place || !place.geometry || !place.geometry.location) {
+      alert('❌ Ви не вибрали адресу зі списку (пункт B)');
+      toInput.value = '';
+      toPlace = null;
+      return;
+    }
+
+    toPlace = place;
+    if (manualToMarker) manualToMarker.setMap(null);
+    manualToMarker = new Marker({
+      position: place.geometry.location,
+      map: map,
+      label: 'B',
+    });
+
+    saveCoordsToLS();
+    calculateAndDisplayRoute();
+  });
+
   const savedData = JSON.parse(localStorage.getItem('form-data') || '{}');
 
   if (savedData['get-in-coords']) {
@@ -239,7 +221,6 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
     manualFromMarker = new Marker({ position: location, map, label: 'A' });
     fromPlace = { geometry: { location } };
     fromInput.value = savedData['get-in'] || '';
-    fromInput.dispatchEvent(new InputEvent('input', { bubbles: true }));
   }
 
   if (savedData['get-out-coords']) {
@@ -248,7 +229,6 @@ const API_key = 'AIzaSyDenJrU1OnfLreiz4i6a7dyoBeSLK02F7Y';
     manualToMarker = new Marker({ position: location, map, label: 'B' });
     toPlace = { geometry: { location } };
     toInput.value = savedData['get-out'] || '';
-    toInput.dispatchEvent(new InputEvent('input', { bubbles: true }));
   }
 
   if (fromPlace && toPlace) {
