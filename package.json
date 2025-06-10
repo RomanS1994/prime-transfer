@@ -17,8 +17,11 @@
   "author": "Roman Stryzhka rstrizhko1994@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "basiclightbox": "^5.0.4",
+    "firebase": "^11.9.0",
     "flatpickr": "^4.6.13",
+    "jspdf": "^3.0.1",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }

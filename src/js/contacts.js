@@ -1,3 +1,12 @@
+import emailjs from '@emailjs/browser';
+emailjs.init('OSo8LZCAina66hnWn'); // твій актуальний публічний ключ
+
+import { uploadTransferPdf } from './firebase/uploadPdf.js';
+
+import { buildAndSendData } from './send.js';
+import { clearMarkers } from './map/inputs.js';
+import { clearRoute } from './map/route.js';
+
 const refs = {
   form: document.querySelector('form'),
   button: document.querySelector('.submit-button'),
@@ -69,31 +78,62 @@ form.addEventListener('input', event => {
 // Сабмітимо форму
 button.addEventListener('click', handlerSubmit);
 
-function handlerSubmit(e) {
+async function handlerSubmit(e) {
+  console.log('📩 handlerSubmit запускається');
   e.preventDefault();
 
-  const objLength = Object.keys(data).length;
-  if (objLength !== 6) {
-    alert('Заповніть всі дані у таблиці!');
+  const inputs = form.querySelectorAll('.form-input');
+  const allFilled = [...inputs].every(input => input.value.trim());
+  if (!allFilled) {
+    alert('Заповніть всі дані у формі!');
     return;
   }
 
-  // 💥 Очищаємо все
-  localStorage.removeItem(keyLS);
+  // ✅ Створюємо об'єднаний об'єкт даних
+  const payload = buildAndSendData();
+  console.log('📦 Payload:', payload);
 
-  console.log('Дані відправлені:', data);
+  // // 📎 Генеруємо PDF і завантажуємо на Firebase
+  // try {
+  //   const pdfUrl = await uploadTransferPdf(payload);
+  //   payload.pdfUrl = pdfUrl; // 🔗 додаємо в об'єкт
+  //   console.log('✅ PDF uploaded:', pdfUrl);
+  // } catch (error) {
+  //   console.error('❌ Помилка завантаження PDF:', error);
+  //   alert('Не вдалося завантажити PDF. Спробуйте ще раз.');
+  //   return;
+  // }
 
-  // Очищення полів форми
-  Array.from(form.elements).forEach(el => {
-    if (el.classList.contains('form-input')) {
-      el.value = '';
-      changeBgColor(el, 'var(--white)');
+  // ✉️ Відправляємо Email через EmailJS
+  const SERVICE_ID = 'service_2jgokst';
+  const TEMPLATE_ID = 'template_rq2x55a';
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, payload).then(
+    function (response) {
+      console.log('✅ Email sent:', response);
+      alert('Дані успішно надіслано на email!');
+    },
+    function (error) {
+      console.error('❌ Email send error:', JSON.stringify(error, null, 2));
+      alert('Помилка надсилання email!');
     }
+  );
+
+  console.log('📦 Дані відправлені:', payload);
+
+  // 🧹 Очищення
+  localStorage.removeItem(keyLS);
+  localStorage.removeItem('route-data');
+  clearMarkers();
+  clearRoute();
+
+  inputs.forEach(el => {
+    el.value = '';
+    changeBgColor(el, 'var(--white)');
   });
 
-  data = {}; // Очищуємо обʼєкт
+  data = {};
 
   alert('Форма успішно відправлена ✅');
 }
-console.log(data);
+
 console.log(localStorage.getItem(keyLS));
