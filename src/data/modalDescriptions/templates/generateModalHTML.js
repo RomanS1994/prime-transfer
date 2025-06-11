@@ -21,7 +21,7 @@ export function generateModalHTML(data) {
       </a>
       <button class="button-modal-close modal-close">
         <svg class="mpdal-close-svg " width="24" height="24">
-          <use href="/public/img/svg/sprite.svg#close"></use>
+          <use href="/img/svg/sprite.svg#close"></use>
         </svg>
       </button>
     </div>

@@ -2,7 +2,7 @@ export const modalDescriptions = {
   airport: {
     title: 'Co zahrnuje náš letištní transfer?',
     subtitle: '✈️ Letištní transfer',
-    image: '/public/img/modalDescription/airport.jpg',
+    image: '/img/modalDescription/airport.jpg',
     list: [
       'Řidič vás přivítá se jmenovkou u východu z terminálu.',
       'Pomoc se zavazadly.',

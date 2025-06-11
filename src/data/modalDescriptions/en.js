@@ -2,7 +2,7 @@ export const modalDescriptions = {
   airport: {
     title: 'What’s included in our airport transfer?',
     subtitle: '✈️ Airport Transfer',
-    image: '/public/img/modalDescription/airport.jpg',
+    image: '/img/modalDescription/airport.jpg',
     list: [
       'Driver meets you with a sign at the terminal exit.',
       'Assistance with luggage.',

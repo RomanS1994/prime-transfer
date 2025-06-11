@@ -2,7 +2,7 @@ export const modalDescriptions = {
   airport: {
     title: 'Що входить у наш аеропортний трансфер?',
     subtitle: '✈️ Аеропортний трансфер',
-    image: '/public/img/modalDescription/airport.jpg',
+    image: '/img/modalDescription/airport.jpg',
     list: [
       'Водій зустріне з табличкою біля виходу з терміналу.',
       'Допомога з багажем.',
