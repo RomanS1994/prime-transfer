@@ -2,7 +2,7 @@ export const modalDescriptions = {
   airport: {
     title: 'What’s included in our airport transfer?',
     subtitle: '✈️ Airport Transfer',
-    image: '../public/img/modalDescription/airport.jpg',
+    image: '/public/img/modalDescription/airport.jpg',
     list: [
       'Driver meets you with a sign at the terminal exit.',
       'Assistance with luggage.',
@@ -17,7 +17,7 @@ export const modalDescriptions = {
   corporate: {
     title: 'The perfect solution for business',
     subtitle: '🧑‍💼 Corporate Transfer',
-    image: '../public/img/modalDescription/corporate.jpg',
+    image: '/public/img/modalDescription/corporate.jpg',
     list: [
       'Service tailored for corporate clients.',
       'Option to sign a contract with your company.',
@@ -32,7 +32,7 @@ export const modalDescriptions = {
   personal: {
     title: 'Your driver for a day, a week, or a journey',
     subtitle: '🚗 Personal Driver',
-    image: '../public/img/modalDescription/personal.jpg',
+    image: '/public/img/modalDescription/personal.jpg',
     list: [
       'Hire a driver by the hour or for the whole day.',
       'City rides, stops, waiting time — all included.',
@@ -46,7 +46,7 @@ export const modalDescriptions = {
   vip: {
     title: 'Luxury and premium-class comfort',
     subtitle: '👑 VIP & Luxury Services',
-    image: '../public/img/modalDescription/vip.jpg',
+    image: '/public/img/modalDescription/vip.jpg',
     list: [
       'Personalized approach for every client.',
       'Top-tier vehicles only.',
@@ -61,7 +61,7 @@ export const modalDescriptions = {
   tours: {
     title: 'Travel with comfort and joy',
     subtitle: '🌍 Tours & Excursions',
-    image: '../public/img/modalDescription/vip.jpg',
+    image: '/public/img/modalDescription/vip.jpg',
     list: [
       'Organization of private and group tours.',
       'Choose a guide or just a driver.',

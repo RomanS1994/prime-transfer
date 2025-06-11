@@ -2,7 +2,7 @@ export const modalDescriptions = {
   airport: {
     title: 'Co zahrnuje náš letištní transfer?',
     subtitle: '✈️ Letištní transfer',
-    image: '../public/img/modalDescription/airport.jpg',
+    image: '/public/img/modalDescription/airport.jpg',
     list: [
       'Řidič vás přivítá se jmenovkou u východu z terminálu.',
       'Pomoc se zavazadly.',
@@ -17,7 +17,7 @@ export const modalDescriptions = {
   corporate: {
     title: 'Ideální řešení pro firmy',
     subtitle: '🧑‍💼 Firemní transfer',
-    image: '../public/img/modalDescription/corporate.jpg',
+    image: '/public/img/modalDescription/corporate.jpg',
     list: [
       'Služby pro firemní klientelu.',
       'Možnost podepsání smlouvy s vaší společností.',
@@ -32,7 +32,7 @@ export const modalDescriptions = {
   personal: {
     title: 'Váš řidič na den, týden nebo výlet',
     subtitle: '🚗 Osobní řidič',
-    image: '../public/img/modalDescription/personal.jpg',
+    image: '/public/img/modalDescription/personal.jpg',
     list: [
       'Možnost pronájmu řidiče na hodiny nebo celý den.',
       'Cestování po městě, zastávky a čekání jsou zahrnuty.',
@@ -46,7 +46,7 @@ export const modalDescriptions = {
   vip: {
     title: 'Luxus a pohodlí nejvyšší třídy',
     subtitle: '👑 VIP a luxusní služby',
-    image: '../public/img/modalDescription/vip.jpg',
+    image: '/public/img/modalDescription/vip.jpg',
     list: [
       'Individuální přístup ke každému klientovi.',
       'Vozidla nejvyšší třídy.',
@@ -61,7 +61,7 @@ export const modalDescriptions = {
   tours: {
     title: 'Cestujte pohodlně a s radostí',
     subtitle: '🌍 Výlety a exkurze',
-    image: '../public/img/modalDescription/vip.jpg',
+    image: '/public/img/modalDescription/vip.jpg',
     list: [
       'Organizace individuálních i skupinových výletů.',
       'Možnost průvodce nebo pouze řidiče.',
