@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prime-transfer.com/sitemap.xml
+Host: https://prime-transfer.com
