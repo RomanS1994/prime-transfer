@@ -17,7 +17,7 @@ export const modalDescriptions = {
   corporate: {
     title: 'The perfect solution for business',
     subtitle: '🧑‍💼 Corporate Transfer',
-    image: '/public/img/modalDescription/corporate.jpg',
+    image: '/img/modalDescription/corporate.jpg',
     list: [
       'Service tailored for corporate clients.',
       'Option to sign a contract with your company.',
@@ -32,7 +32,7 @@ export const modalDescriptions = {
   personal: {
     title: 'Your driver for a day, a week, or a journey',
     subtitle: '🚗 Personal Driver',
-    image: '/public/img/modalDescription/personal.jpg',
+    image: '/img/modalDescription/personal.jpg',
     list: [
       'Hire a driver by the hour or for the whole day.',
       'City rides, stops, waiting time — all included.',
