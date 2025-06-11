@@ -1,0 +1,86 @@
+.error_modal {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 100px;
+
+  position: relative;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url('../public/img/other-photo/it-center.jpg');
+
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 20px;
+
+  width: 1000px;
+  height: 600px;
+}
+.error_modal-svg-close {
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  top: 24px;
+  right: 24px;
+}
+.error_image {
+}
+
+.error_modal-title {
+  color: var(--secondary-accent-color);
+
+  /* button-text */
+  font-family: var(--font-family-Poppins);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.error_modal-subtitle {
+  color: var(--secondary-accent-color);
+
+  /* button-text */
+  font-family: var(--font-family-Poppins);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.button {
+}
+.button-order {
+}
+
+.error_modal-svg-close {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.error_modal-svg-close:hover {
+  stroke: var(--accent-color);
+  fill: var(--accent-color);
+}
+.basicLightbox--visible::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(14, 9, 0, 0.6); /* ⬅️ Напівпрозорий чорний фон */
+  z-index: 0;
+}
+
+.basicLightbox__placeholder {
+  position: relative;
+  z-index: 1; /* Щоб модалка була поверх затемнення */
+}

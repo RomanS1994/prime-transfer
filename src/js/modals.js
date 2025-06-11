@@ -11,6 +11,7 @@ document.querySelectorAll('.btn-more').forEach(btn => {
     const html = generateModalHTML(data);
 
     const instance = basicLightbox.create(html, {
+      blur: 3,
       onShow: instance => {
         const close = instance.element().querySelectorAll('.modal-close');
         close.forEach(el =>
