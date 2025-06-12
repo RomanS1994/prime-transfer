@@ -46,7 +46,7 @@ export const modalDescriptions = {
   vip: {
     title: 'Luxury and premium-class comfort',
     subtitle: '👑 VIP & Luxury Services',
-    image: '/public/img/modalDescription/vip.jpg',
+    image: '/img/modalDescription/vip.jpg',
     list: [
       'Personalized approach for every client.',
       'Top-tier vehicles only.',
@@ -61,7 +61,7 @@ export const modalDescriptions = {
   tours: {
     title: 'Travel with comfort and joy',
     subtitle: '🌍 Tours & Excursions',
-    image: '/public/img/modalDescription/vip.jpg',
+    image: '/img/modalDescription/vip.jpg',
     list: [
       'Organization of private and group tours.',
       'Choose a guide or just a driver.',
